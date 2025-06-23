@@ -75,4 +75,3 @@ See below for options.
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
 - [Python](https://github.com/pydn/ComfyUI-to-Python-Extension)
 - [Ollama](https://github.com/stavsap/comfyui-ollama)
-- [Ollama Describer](https://github.com/alisson-anjos/ComfyUI-Ollama-Describer)

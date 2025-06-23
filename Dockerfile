@@ -33,8 +33,8 @@ RUN pip3 install --no-cache-dir opencv-python diffusers gradio requests openai &
     git clone https://github.com/liusida/ComfyUI-Login.git && \
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
-    git clone https://github.com/stavsap/comfyui-ollama.git && \
-    git clone https://github.com/alisson-anjos/ComfyUI-Ollama-Describer.git    
+    git clone https://github.com/stavsap/comfyui-ollama.git
+
 # Install requirements for each relevant custom node
 RUN pip3 install --no-cache-dir \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \

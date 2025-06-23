@@ -34,7 +34,7 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
         code-server /workspace --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
-	sleep 2
+	sleep 5
 
 	# Start Ollama server
     ollama serve &
@@ -42,12 +42,19 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
 	# Wait until Ollama is ready
     until curl -s http://127.0.0.1:11434 > /dev/null; do
         echo "[INFO] Waiting for Ollama to start..."    
-		sleep 2
+		sleep 5
     done
     echo "[INFO] Ollama server is ready (http://127.0.0.1:11434)."
 	
 	# Start ComfyUI (HTTP port 8188)
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen} &
+	
+	# Wait until ComfyUI is ready
+    until curl -s http://127.0.0.1:8188 > /dev/null; do
+        echo "[INFO] Waiting for ComfyUI to start..."    
+		sleep 5
+    done
+    echo "[INFO] ComfyUI server is ready (http://127.0.0.1:8188)."
 	
 	# Confirmation	
 	echo "[INFO] Code Server & ComfyUI & Ollama started"
