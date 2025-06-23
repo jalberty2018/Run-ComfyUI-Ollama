@@ -15,7 +15,7 @@ See below for options.
 
 ## Hardware Requirements  
  
-- **Recommended GPUs**: L4, A40
+- **Recommended GPUs**: Nvidia RTX A4500, A40
 - **Storage**:  
   - **Volume**: 20GB (`/workspace`)  
   - **Pod Volume**: 70Gb  
@@ -43,7 +43,7 @@ See below for options.
 
 | Model Type        | URL (Huggingface or Ollama) |
 |-------------------|-----------------------------|
-| Ollama model      | `OLLAMA_MODEL[1-4]`         |
+| Ollama model      | `OLLAMA_MODEL[1-6]`         |
 
 ## Connection options 
 
@@ -54,6 +54,7 @@ See below for options.
 | **ComfyUI**     | `8188` (HTTP) |
 | **Code Server** | `9000` (HTTP) |
 | **SSH/SCP**     | `22`   (TCP)  |
+| **Gradio**.     | `7860` (HTTP) |
 
 
 ## Website models
@@ -74,3 +75,4 @@ See below for options.
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
 - [Python](https://github.com/pydn/ComfyUI-to-Python-Extension)
 - [Ollama](https://github.com/stavsap/comfyui-ollama)
+- [Ollama Describer](https://github.com/alisson-anjos/ComfyUI-Ollama-Describer)

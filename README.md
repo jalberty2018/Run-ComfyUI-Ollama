@@ -17,7 +17,7 @@ See below for options.
 
 ## Hardware Requirements  
  
-- **Recommended GPUs**: L4, A40
+- **Recommended GPUs**: Nvidia RTX A4500, A40
 - **Storage**:  
   - **Volume**: 20GB (`/workspace`)  
   - **Pod Volume**: 70Gb  
@@ -63,7 +63,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 
 | Model Type        | URL (Huggingface or Ollama) |
 |-------------------|-----------------------------|
-| Ollama model      | `OLLAMA_MODEL[1-4]`         |
+| Ollama model      | `OLLAMA_MODEL[1-6]`         |
 
 ## Connection options 
 
@@ -74,6 +74,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 | **ComfyUI**     | `8188` (HTTP) |
 | **Code Server** | `9000` (HTTP) |
 | **SSH/SCP**     | `22`   (TCP)  |
+| **Gradio**.     | `7860` (HTTP) |
 
 ## Website models
 
@@ -93,6 +94,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
 - [Python](https://github.com/pydn/ComfyUI-to-Python-Extension)
 - [Ollama](https://github.com/stavsap/comfyui-ollama)
+- [Ollama Describer](https://github.com/alisson-anjos/ComfyUI-Ollama-Describer)
 
 ## Manual provisioning
 
@@ -105,6 +107,16 @@ docker pull ls250824/run-comfyui-ollama:<version>
 ![i2t simple](images/ollama-vision-simple.JPG)
 
 ![i2t advanced](images/ollama-vision-advanced.JPG)
+
+## Gradio
+
+[Gradio chat in python source](gradio/chat_UnSlopNemo.py)
+
+```bash
+python gradio/chat_UnslopNemo.py
+```
+
+Interface available on exposed http port 7860
 
 ## Building the Docker Image 
 

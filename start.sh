@@ -16,7 +16,7 @@ then
 fi
 
 # Move necessary files to workspace
-for script in comfyui-on-workspace.sh provisioning-on-workspace.sh readme-on-workspace.sh; do
+for script in comfyui-on-workspace.sh provisioning-on-workspace.sh gradio-on-workspace.sh readme-on-workspace.sh; do
     if [ -f "/$script" ]; then
         echo "Executing $script..."
         "/$script"
@@ -64,7 +64,7 @@ else
 fi
 
 # Download Ollama models
-for i in 1 2 3 4; do
+for i in 1 2 3 4 5 6; do
     var="OLLAMA_MODEL$i"
     model="${!var}"
     if [[ -n "$model" ]]; then
