@@ -5,7 +5,7 @@ FROM ls250824/comfyui-runtime:13062025 AS base
 WORKDIR /
 
 # Copy scripts and make them executable
-COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/gradio-on-workspace.sh/
+COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/gradio-on-workspace.sh /
 
 # Copy documentation with appropriate permissions
 COPY --chmod=644 documentation/README_runpod.md /README.md
