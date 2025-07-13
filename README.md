@@ -74,7 +74,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 | **ComfyUI**     | `8188` (HTTP) |
 | **Code Server** | `9000` (HTTP) |
 | **SSH/SCP**     | `22`   (TCP)  |
-| **Gradio**.     | `7860` (HTTP) |
+| **Gradio**      | `7860` (HTTP) |
 
 ## Website models
 
