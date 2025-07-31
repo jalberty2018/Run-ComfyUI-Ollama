@@ -63,6 +63,10 @@ See below for options.
 - [Code server](https://github.com/coder/code-server)
 - [Ollama](https://github.com/ollama/ollama)
 
+## Tutorial
+
+- [blog](https://geshan.com.np/blog/categories/ollama/)
+
 ### Custom Nodes ComfyUI 
 
 #### Full list

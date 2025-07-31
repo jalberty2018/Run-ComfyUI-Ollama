@@ -65,7 +65,7 @@ fi
 	
 # Login to Hugging Face if token is provided
 if [[ -n "$HF_TOKEN" ]]; then
-    huggingface-cli login --token "$HF_TOKEN"
+    hf login --token "$HF_TOKEN"
 else
 	echo "[WARNING]: HF_TOKEN is not set as an environment variable"
 fi
@@ -76,7 +76,7 @@ for i in 1 2 3 4 5 6; do
     model="${!var}"
     if [[ -n "$model" ]]; then
         echo "[INFO] Pulling Ollama model: $model"
-        if ollama pull "$model" --quiet; then
+        if ollama pull "$model"; then
             echo "[OK] Successfully pulled model: $model"
         else
             echo "[WARNING] Failed to pull model: $model" >&2

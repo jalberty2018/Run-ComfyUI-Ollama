@@ -86,6 +86,10 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [Code server](https://github.com/coder/code-server)
 - [Ollama](https://github.com/ollama/ollama)
 
+## Tutorial
+
+- [blog](https://geshan.com.np/blog/categories/ollama/)
+
 ### Custom Nodes ComfyUI 
 
 #### Full list
