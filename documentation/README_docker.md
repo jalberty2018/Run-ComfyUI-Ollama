@@ -67,11 +67,17 @@ See below for options.
 - [Code server](https://github.com/coder/code-server)
 - [Ollama](https://github.com/ollama/ollama)
 
-## Website custom_nodes
+### Custom Nodes ComfyUI 
+
+#### Full list
+
+- [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
+
+#### Installed
 
 - [rgthree](https://github.com/rgthree/rgthree-comfy)
 - [login](https://github.com/liusida/ComfyUI-Login)
 - [manager](https://github.com/ltdrdata/ComfyUI-Manager)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
-- [Python](https://github.com/pydn/ComfyUI-to-Python-Extension)
 - [Ollama](https://github.com/stavsap/comfyui-ollama)
+- [Comfyui-LoopLoader](https://github.com/alessandrozonta/Comfyui-LoopLoader)

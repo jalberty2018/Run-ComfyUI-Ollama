@@ -86,7 +86,13 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [Code server](https://github.com/coder/code-server)
 - [Ollama](https://github.com/ollama/ollama)
 
-## Website custom_nodes
+### Custom Nodes ComfyUI 
+
+#### Full list
+
+- [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
+
+#### Installed
 
 - [rgthree](https://github.com/rgthree/rgthree-comfy)
 - [login](https://github.com/liusida/ComfyUI-Login)
@@ -94,7 +100,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
 - [Python](https://github.com/pydn/ComfyUI-to-Python-Extension)
 - [Ollama](https://github.com/stavsap/comfyui-ollama)
-- [Ollama Describer](https://github.com/alisson-anjos/ComfyUI-Ollama-Describer)
+- [Comfyui-LoopLoader](https://github.com/alessandrozonta/Comfyui-LoopLoader)
 
 ## Manual provisioning
 
@@ -110,10 +116,11 @@ docker pull ls250824/run-comfyui-ollama:<version>
 
 ## Gradio
 
-[Gradio chat in python source](gradio/chat_UnSlopNemo.py)
+[Gradio chat in python source](gradio/chat.py)
 
 ```bash
-python gradio/chat_UnslopNemo.py
+ollama pull hf.co/saukko/Abliterated-Dolphin3.0-R1-Mistral-24B-GGUF:Q8_0
+python gradio/chat.py
 ```
 
 Interface available on exposed http port 7860

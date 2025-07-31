@@ -1,5 +1,5 @@
 # Base image
-FROM ls250824/comfyui-runtime:08072025 AS base
+FROM ls250824/comfyui-runtime:29072025 AS base
 
 # Set working directory
 WORKDIR /
@@ -26,17 +26,17 @@ COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
 # Install required Python packages and clone custom ComfyUI nodes
-RUN pip3 install --no-cache-dir opencv-python diffusers gradio requests openai && \
-    cd /ComfyUI/custom_nodes && \
+RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/rgthree/rgthree-comfy.git && \
     git clone https://github.com/liusida/ComfyUI-Login.git && \
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
+	git clone https://github.com/alessandrozonta/Comfyui-LoopLoader.git && \
     git clone https://github.com/stavsap/comfyui-ollama.git
 
 # Install requirements for each relevant custom node
-RUN pip3 install --no-cache-dir \
+RUN pip3 install --no-cache-dir diffusers gradio requests openai -U "huggingface_hub[cli]" \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
