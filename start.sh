@@ -21,7 +21,7 @@ for script in comfyui-on-workspace.sh provisioning-on-workspace.sh gradio-on-wor
         echo "Executing $script..."
         "/$script"
     else
-        echo "[WARNING]: Skipping $script (not found)"
+        echo "⚠️ WARNING: Skipping $script (not found)"
     fi
 done
 
@@ -30,7 +30,7 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
     if [[ -n "$PASSWORD" ]]; then
         code-server /workspace --auth password --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
-        echo "[WARNING]: PASSWORD is not set as an environment variable"
+        echo "⚠️ WARNING: PASSWORD is not set as an environment variable"
         code-server /workspace --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
@@ -60,14 +60,14 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
 	echo "[INFO] Code Server & ComfyUI & Ollama started"
 	
 else
-    echo "[WARNING]: No GPU available, ComfyUI, Code Server, Ollama not started to limit memory use"
+    echo "⚠️ WARNING: No GPU available, ComfyUI, Code Server, Ollama not started to limit memory use"
 fi
 	
 # Login to Hugging Face if token is provided
 if [[ -n "$HF_TOKEN" ]]; then
     hf login --token "$HF_TOKEN"
 else
-	echo "[WARNING]: HF_TOKEN is not set as an environment variable"
+	echo "⚠️ WARNING: HF_TOKEN is not set as an environment variable"
 fi
 
 # Download Ollama models
@@ -79,12 +79,12 @@ for i in 1 2 3 4 5 6; do
         if ollama pull "$model"; then
             echo "[OK] Successfully pulled model: $model"
         else
-            echo "[WARNING] Failed to pull model: $model" >&2
+            echo "⚠️ WARNING Failed to pull model: $model" >&2
         fi
     fi
 done
 
-echo "[INFO] Provisioning completed."
+echo "✅ Provisioning completed."
 
 # Keep the container running
 exec sleep infinity

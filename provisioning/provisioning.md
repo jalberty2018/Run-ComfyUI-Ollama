@@ -20,6 +20,8 @@ ollama pull hf.co/mradermacher/DeepSeek-R1-Distill-Llama-8B-abliterate-GGUF:Q8_0
 ollama pull hf.co/mradermacher/Gabliterated-Qwen3-0.6B-GGUF
 ```
 
+## Prompt generation
+
 - Stable diffusion prompts
 
 ```bash
@@ -30,13 +32,12 @@ ollama pull brxce/stable-diffusion-prompt-generator
 ollama pull hf.co/mav23/prompt-generator-GGUF:Q8_0
 ```
 
-- Other
+## Others
 
 ```bash
 ollama pull hf.co/mradermacher/Qwen3-42B-A3B-Stranger-Thoughts-Deep20x-Abliterated-Uncensored-GGUF:Q8_0
 ollama pull hf.co/mradermacher/Qwen3-22B-A3B-The-Harley-Quinn-PUDDIN-Abliterated-Uncensored-GGUF:Q8_0
 ollama pull hf.co/DavidAU/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-GGUF:Q8_0
-
 ``` 
 
 ## Vision Models
@@ -47,9 +48,14 @@ ollama pull hf.co/DavidAU/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abl
 ollama pull Drews54/llama3.2-vision-abliterated
 ```
 
+## Tagging models
+
 - [llama-joycaption-beta-one-hf-llava-GGUF](https://huggingface.co/mradermacher/llama-joycaption-beta-one-hf-llava-GGUF)
+- [Ollama](https://ollama.com/aha2025/llama-joycaption-beta-one-hf-llava)
 
 ```bash
 ollama pull hf.co/mradermacher/llama-joycaption-beta-one-hf-llava-GGUF:Q8_0
 ```
+
+
 

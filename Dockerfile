@@ -33,7 +33,9 @@ RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
 	git clone https://github.com/alessandrozonta/Comfyui-LoopLoader.git && \
-    git clone https://github.com/stavsap/comfyui-ollama.git
+    git clone https://github.com/stavsap/comfyui-ollama.git && \
+	git clone https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node.git && \
+	git clone https://github.com/bradsec/ComfyUI_StringEssentials.git
 
 # Install requirements for each relevant custom node
 RUN pip3 install --no-cache-dir diffusers gradio requests openai -U "huggingface_hub[cli]" \

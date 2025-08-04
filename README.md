@@ -102,9 +102,10 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [login](https://github.com/liusida/ComfyUI-Login)
 - [manager](https://github.com/ltdrdata/ComfyUI-Manager)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
-- [Python](https://github.com/pydn/ComfyUI-to-Python-Extension)
 - [Ollama](https://github.com/stavsap/comfyui-ollama)
 - [Comfyui-LoopLoader](https://github.com/alessandrozonta/Comfyui-LoopLoader)
+- [JoyCaption](https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node)
+- [StringEssentials](https://github.com/bradsec/ComfyUI_StringEssentials.git)
 
 ## Manual provisioning
 
