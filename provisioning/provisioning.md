@@ -42,10 +42,11 @@ ollama pull hf.co/DavidAU/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abl
 
 ## Vision Models
 
-- llama3.2 vision abliterated
-
 ```bash
-ollama pull Drews54/llama3.2-vision-abliterated
+ollama pull llava:7b
+ollama pull llava:13b
+ollama pull llava:34b
+ollama pull llama3.2-vision
 ```
 
 ## Tagging models

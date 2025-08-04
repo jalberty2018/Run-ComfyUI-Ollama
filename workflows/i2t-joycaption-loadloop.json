@@ -1,0 +1,779 @@
+{
+  "id": "dca2fa1d-a2c8-4235-ae8f-982ff872f748",
+  "revision": 0,
+  "last_node_id": 41,
+  "last_link_id": 47,
+  "nodes": [
+    {
+      "id": 39,
+      "type": "SaveImage",
+      "pos": [
+        2495.541259765625,
+        -786.6287841796875
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 43
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 42
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "PreviewImage",
+      "pos": [
+        -98.58934020996094,
+        -678.2583618164062
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 33,
+      "type": "StringPreview",
+      "pos": [
+        969.5311279296875,
+        -904.25146484375
+      ],
+      "size": [
+        365.0105285644531,
+        180.0254364013672
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_string",
+          "type": "STRING",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_stringessentials",
+        "ver": "a4821114114ec0e9931eaac0435b9c085429e0b2",
+        "aux_id": "bradsec/ComfyUI_StringEssentials"
+      },
+      "widgets_values": [
+        "You are a booru tag generator. Generate ONLY comma-separated descriptive tags.\n                Focus on visual elements, character traits, clothing, pose, setting, and actions.\n                Use consistent formatting with underscores for multi-word tags. NO explanatory text.\nIMPORTANT: Keep your response approximately 50 words."
+      ]
+    },
+    {
+      "id": 34,
+      "type": "StringPreview",
+      "pos": [
+        957.1992797851562,
+        -640.8157348632812
+      ],
+      "size": [
+        379.3786926269531,
+        139.8185272216797
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_string",
+          "type": "STRING",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "type": "STRING",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_stringessentials",
+        "ver": "a4821114114ec0e9931eaac0435b9c085429e0b2",
+        "aux_id": "bradsec/ComfyUI_StringEssentials"
+      },
+      "widgets_values": [
+        "Write a short list of Booru-like tags for this image."
+      ]
+    },
+    {
+      "id": 11,
+      "type": "OllamaGenerateV2",
+      "pos": [
+        1379.100830078125,
+        -1096.5477294921875
+      ],
+      "size": [
+        400,
+        304
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "connectivity",
+          "shape": 7,
+          "type": "OLLAMA_CONNECTIVITY",
+          "link": 7
+        },
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OLLAMA_OPTIONS",
+          "link": 25
+        },
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 40
+        },
+        {
+          "name": "context",
+          "shape": 7,
+          "type": "OLLAMA_CONTEXT",
+          "link": null
+        },
+        {
+          "name": "meta",
+          "shape": 7,
+          "type": "OLLAMA_META",
+          "link": null
+        },
+        {
+          "name": "system",
+          "type": "STRING",
+          "widget": {
+            "name": "system"
+          },
+          "link": 33
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "STRING",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "context",
+          "type": "OLLAMA_CONTEXT",
+          "links": null
+        },
+        {
+          "name": "meta",
+          "type": "OLLAMA_META",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-ollama",
+        "ver": "1f5b5bf54551bc9f0b1a4d2915ad496f6dfd8c36",
+        "Node name for S&R": "OllamaGenerateV2",
+        "aux_id": "stavsap/comfyui-ollama"
+      },
+      "widgets_values": [
+        "",
+        "",
+        true,
+        false,
+        "text"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "StringPreview",
+      "pos": [
+        1844.4091796875,
+        -774.6199340820312
+      ],
+      "size": [
+        608.7125244140625,
+        314.8408203125
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_string",
+          "type": "STRING",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "type": "STRING",
+          "links": [
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_stringessentials",
+        "ver": "a4821114114ec0e9931eaac0435b9c085429e0b2",
+        "aux_id": "bradsec/ComfyUI_StringEssentials"
+      },
+      "widgets_values": [
+        "photograph, woman, long_hair, brown_hair, ponytail, casual_clothing, t-shirt, jeans, standing, indoors, kitchen, neutral_expression, side_profile, natural_lighting, brown_eyes, light_skin, background_blurred, counter, cup, domestic_scene, everyday_life, mid-30s, medium_build, simple_decor, realistic_style, unsmiling, relaxed_atmosphere"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "RegexExtract",
+      "pos": [
+        1835.7264404296875,
+        -1104.5186767578125
+      ],
+      "size": [
+        400,
+        262
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "widget": {
+            "name": "string"
+          },
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            42,
+            47
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "RegexExtract"
+      },
+      "widgets_values": [
+        "",
+        "[^\\\\/]+(?=\\.[^.\\\\/]+$)",
+        "First Match",
+        true,
+        false,
+        false,
+        1
+      ]
+    },
+    {
+      "id": 40,
+      "type": "SaveStringKJ",
+      "pos": [
+        2487.167236328125,
+        -991.7377319335938
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "link": 44
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "fbdb08f9d6b0e821919d2c9f9caf8972ed439690",
+        "Node name for S&R": "SaveStringKJ",
+        "aux_id": "kijai/ComfyUI-KJNodes"
+      },
+      "widgets_values": [
+        "text",
+        "output",
+        ".txt"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "LoadLoopImagesFromDir",
+      "pos": [
+        -122.94075775146484,
+        -873.9548950195312
+      ],
+      "size": [
+        275.8999938964844,
+        122
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            39,
+            40,
+            43
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "FILE PATH",
+          "type": "STRING",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "Comfyui-LoopLoader",
+        "ver": "50c0bfea9d880fa1a7202637613fd8d90df611e8",
+        "Node name for S&R": "LoadLoopImagesFromDir"
+      },
+      "widgets_values": [
+        "/workspace/notag",
+        false
+      ]
+    },
+    {
+      "id": 16,
+      "type": "JoyCaptionOllamaPrompter",
+      "pos": [
+        985.7017822265625,
+        -1093.967529296875
+      ],
+      "size": [
+        291.767578125,
+        102
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "extra_options_input",
+          "shape": 7,
+          "type": "JJC_OLLAMA_EXTRA_OPTION",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "system_prompt",
+          "type": "STRING",
+          "links": [
+            32
+          ]
+        },
+        {
+          "name": "user_prompt",
+          "type": "STRING",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node",
+        "ver": "6d915536e3906e8dc3466dd08a68ae2bfc155350",
+        "Node name for S&R": "JoyCaptionOllamaPrompter"
+      },
+      "widgets_values": [
+        "Booru-like tag list",
+        "short"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "JoyCaptionOllamaExtraOptions",
+      "pos": [
+        545.506103515625,
+        -1084.4813232421875
+      ],
+      "size": [
+        382.783203125,
+        706
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "extra_options_ollama",
+          "type": "JJC_OLLAMA_EXTRA_OPTION",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node",
+        "ver": "6d915536e3906e8dc3466dd08a68ae2bfc155350",
+        "Node name for S&R": "JoyCaptionOllamaExtraOptions"
+      },
+      "widgets_values": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 15,
+      "type": "OllamaOptionsV2",
+      "pos": [
+        224.48094177246094,
+        -1075.6041259765625
+      ],
+      "size": [
+        286.103515625,
+        754
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "options",
+          "type": "OLLAMA_OPTIONS",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-ollama",
+        "ver": "1f5b5bf54551bc9f0b1a4d2915ad496f6dfd8c36",
+        "Node name for S&R": "OllamaOptionsV2",
+        "aux_id": "stavsap/comfyui-ollama"
+      },
+      "widgets_values": [
+        false,
+        0,
+        false,
+        0.1,
+        false,
+        5,
+        true,
+        2048,
+        false,
+        64,
+        false,
+        1.1,
+        false,
+        0.8,
+        false,
+        1726200774,
+        "randomize",
+        false,
+        "",
+        false,
+        1,
+        false,
+        -1,
+        false,
+        40,
+        false,
+        0.9,
+        false,
+        0,
+        false
+      ]
+    },
+    {
+      "id": 14,
+      "type": "OllamaConnectivityV2",
+      "pos": [
+        -115.75004577636719,
+        -1065.5391845703125
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "connection",
+          "type": "OLLAMA_CONNECTIVITY",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-ollama",
+        "ver": "1f5b5bf54551bc9f0b1a4d2915ad496f6dfd8c36",
+        "Node name for S&R": "OllamaConnectivityV2",
+        "aux_id": "stavsap/comfyui-ollama"
+      },
+      "widgets_values": [
+        "http://127.0.0.1:11434",
+        "hf.co/mradermacher/llama-joycaption-beta-one-hf-llava-GGUF:Q8_0",
+        5,
+        "minutes"
+      ]
+    }
+  ],
+  "links": [
+    [
+      7,
+      14,
+      0,
+      11,
+      0,
+      "OLLAMA_CONNECTIVITY"
+    ],
+    [
+      25,
+      15,
+      0,
+      11,
+      1,
+      "OLLAMA_OPTIONS"
+    ],
+    [
+      32,
+      16,
+      0,
+      33,
+      0,
+      "STRING"
+    ],
+    [
+      33,
+      33,
+      0,
+      11,
+      5,
+      "STRING"
+    ],
+    [
+      35,
+      34,
+      0,
+      11,
+      6,
+      "STRING"
+    ],
+    [
+      36,
+      11,
+      0,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      37,
+      16,
+      1,
+      34,
+      0,
+      "STRING"
+    ],
+    [
+      38,
+      17,
+      0,
+      16,
+      0,
+      "JJC_OLLAMA_EXTRA_OPTION"
+    ],
+    [
+      39,
+      36,
+      0,
+      37,
+      0,
+      "IMAGE"
+    ],
+    [
+      40,
+      36,
+      0,
+      11,
+      2,
+      "IMAGE"
+    ],
+    [
+      41,
+      36,
+      2,
+      38,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      38,
+      0,
+      39,
+      1,
+      "STRING"
+    ],
+    [
+      43,
+      36,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      35,
+      0,
+      40,
+      0,
+      "STRING"
+    ],
+    [
+      47,
+      38,
+      0,
+      40,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0834705943389185,
+      "offset": [
+        -920.3048280865955,
+        1093.2925837907892
+      ]
+    },
+    "frontendVersion": "1.23.4",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
