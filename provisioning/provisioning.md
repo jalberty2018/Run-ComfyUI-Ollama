@@ -57,6 +57,3 @@ ollama pull llama3.2-vision
 ```bash
 ollama pull hf.co/mradermacher/llama-joycaption-beta-one-hf-llava-GGUF:Q8_0
 ```
-
-
-

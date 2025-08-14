@@ -1,5 +1,5 @@
 # Base image
-FROM ls250824/comfyui-runtime:29072025 AS base
+FROM ls250824/comfyui-runtime:06082025 AS base
 
 # Set working directory
 WORKDIR /
@@ -34,15 +34,16 @@ RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
 	git clone https://github.com/alessandrozonta/Comfyui-LoopLoader.git && \
     git clone https://github.com/stavsap/comfyui-ollama.git && \
-	git clone https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node.git && \
-	git clone https://github.com/bradsec/ComfyUI_StringEssentials.git
+	git clone https://github.com/bradsec/ComfyUI_StringEssentials.git && \
+	git clone https://github.com/heshengtao/comfyui_LLM_party.git && \
 
 # Install requirements for each relevant custom node
-RUN pip3 install --no-cache-dir diffusers gradio requests openai -U "huggingface_hub[cli]" \
+RUN pip3 install --no-cache-dir diffusers gradio requests openai \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
-	-r /ComfyUI/custom_nodes/comfyui-ollama/requirements.txt
+	-r /ComfyUI/custom_nodes/comfyui-ollama/requirements.txt \
+	-r /ComfyUI/custom_nodes/comfyui_LLM_party/requirements.txt
 
 # Set workspace directory
 WORKDIR /workspace

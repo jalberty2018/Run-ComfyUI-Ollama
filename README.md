@@ -106,6 +106,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [Comfyui-LoopLoader](https://github.com/alessandrozonta/Comfyui-LoopLoader)
 - [JoyCaption](https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node)
 - [StringEssentials](https://github.com/bradsec/ComfyUI_StringEssentials.git)
+- [LLM_party](https://github.com/heshengtao/comfyui_LLM_party)
 
 ## Manual provisioning
 
@@ -114,8 +115,6 @@ docker pull ls250824/run-comfyui-ollama:<version>
 ## Templates available in ComfyUI (left folder icon)
 
 ![t2t simple](images/ollama-simple.JPG)
-
-![i2t simple](images/ollama-vision-simple.JPG)
 
 ![i2t advanced](images/ollama-vision-advanced.JPG)
 

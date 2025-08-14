@@ -25,7 +25,18 @@ for script in comfyui-on-workspace.sh provisioning-on-workspace.sh gradio-on-wor
     fi
 done
 
-if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
+# GPU detection
+HAS_GPU=0
+if [[ -n "${RUNPOD_GPU_COUNT:-}" && "${RUNPOD_GPU_COUNT:-0}" -gt 0 ]]; then
+  HAS_GPU=1
+elif command -v nvidia-smi >/dev/null 2>&1; then
+  nvidia-smi >/dev/null 2>&1 && HAS_GPU=1 || true
+elif [[ -n "${CUDA_VISIBLE_DEVICES:-}" && "${CUDA_VISIBLE_DEVICES}" != "-1" ]]; then
+  HAS_GPU=1
+fi
+
+# Run services
+if [[ "$HAS_GPU" -eq 1 ]]; then
     # Start code-server (HTTP port 9000)
     if [[ -n "$PASSWORD" ]]; then
         code-server /workspace --auth password --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
@@ -65,7 +76,7 @@ fi
 	
 # Login to Hugging Face if token is provided
 if [[ -n "$HF_TOKEN" ]]; then
-    hf login --token "$HF_TOKEN"
+    hf auth login --token "$HF_TOKEN"
 else
 	echo "⚠️ WARNING: HF_TOKEN is not set as an environment variable"
 fi

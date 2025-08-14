@@ -83,6 +83,7 @@ See below for options.
 - [Comfyui-LoopLoader](https://github.com/alessandrozonta/Comfyui-LoopLoader)
 - [JoyCaption](https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node)
 - [StringEssentials](https://github.com/bradsec/ComfyUI_StringEssentials.git)
+- [LLM_party](https://github.com/heshengtao/comfyui_LLM_party)
 
 ## Gradio
 
