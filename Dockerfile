@@ -44,7 +44,7 @@ RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/stavsap/comfyui-ollama.git && \
 	git clone https://github.com/bradsec/ComfyUI_StringEssentials.git && \
 	git clone https://github.com/heshengtao/comfyui_LLM_party.git && \
-	git clone https://github.com/Enemyx-net/VibeVoice-ComfyUI.git && \
+	git clone https://github.com/Enemyx-net/VibeVoice-ComfyUI.git
 
 # Install requirements for each relevant custom node
 RUN pip3 install --no-cache-dir diffusers gradio requests openai \
