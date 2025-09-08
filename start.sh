@@ -74,13 +74,6 @@ else
     echo "⚠️ WARNING: No GPU available, ComfyUI, Code Server, Ollama not started to limit memory use"
 fi
 	
-# Login to Hugging Face if token is provided
-if [[ -n "$HF_TOKEN" ]]; then
-    hf auth login --token "$HF_TOKEN"
-else
-	echo "⚠️ WARNING: HF_TOKEN is not set as an environment variable"
-fi
-
 # Download Ollama models
 for i in 1 2 3 4 5 6; do
     var="OLLAMA_MODEL$i"

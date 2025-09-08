@@ -88,4 +88,6 @@ See below for options.
 - [JoyCaption](https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node)
 - [StringEssentials](https://github.com/bradsec/ComfyUI_StringEssentials.git)
 - [LLM_party](https://github.com/heshengtao/comfyui_LLM_party)
+- [VibeVoice](https://github.com/Enemyx-net/VibeVoice-ComfyUI)
+- [VLM nodes](https://github.com/gokayfem/ComfyUI_VLM_nodes)
 

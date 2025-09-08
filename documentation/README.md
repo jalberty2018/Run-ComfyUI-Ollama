@@ -1,25 +1,5 @@
 # Run ComfyUI Ollama with Custom nodes
 
-## Synopsis
-
-A streamlined setup for running **ComfyUI** with **Ollama**.  
-This pod downloads models as specified in the **environment variables**
-
-- Models are automatically downloaded based on the specified paths in the environment configuration.  
-- Authentication credentials can be set via secrets for:  
-  - **Code server** authentication (not possible to switch off) 
-  - **Hugging Face** tokens for model access.  
-
-Ensure that the required environment variables and secrets are correctly set before running the pod.
-See below for options.
-
-## Hardware Requirements  
- 
-- **Recommended GPUs**: Nvidia RTX A4500, A40
-- **Storage**:  
-  - **Volume**: 20GB (`/workspace`)  
-  - **Pod Volume**: 70Gb  
-
 ## Environment Variables  
 
 ### **ComfyUI Arguments**  
@@ -86,3 +66,21 @@ See below for options.
 - [LLM_party](https://github.com/heshengtao/comfyui_LLM_party)
 - [VibeVoice](https://github.com/Enemyx-net/VibeVoice-ComfyUI)
 - [VLM nodes](https://github.com/gokayfem/ComfyUI_VLM_nodes)
+
+## Gradio
+
+```bash
+python gradio/chat_unslopNemo.py
+```
+
+Interface available on exposed http port 7860
+
+## Utilites
+
+```bash
+nvtop
+htop
+mc
+nano
+ncdu
+```

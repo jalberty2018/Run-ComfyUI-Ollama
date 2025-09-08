@@ -107,6 +107,7 @@ docker pull ls250824/run-comfyui-ollama:<version>
 - [JoyCaption](https://github.com/judian17/ComfyUI-JoyCaption-beta-one-hf-llava-Prompt_node)
 - [StringEssentials](https://github.com/bradsec/ComfyUI_StringEssentials.git)
 - [LLM_party](https://github.com/heshengtao/comfyui_LLM_party)
+- [VibeVoice](https://github.com/Enemyx-net/VibeVoice-ComfyUI)
 
 ## Manual provisioning
 

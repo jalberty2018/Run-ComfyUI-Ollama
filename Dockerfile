@@ -1,5 +1,5 @@
 # Base image
-FROM ls250824/comfyui-runtime:06082025 AS base
+FROM ls250824/comfyui-runtime:07082025 AS base
 
 # Set working directory
 WORKDIR /
@@ -8,7 +8,7 @@ WORKDIR /
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/gradio-on-workspace.sh /
 
 # Copy documentation with appropriate permissions
-COPY --chmod=644 documentation/README_runpod.md /README.md
+COPY --chmod=644 documentation/README.md /README.md
 
 # Copy provisioning with appropriate permissions
 COPY --chmod=644 provisioning/ /provisioning
@@ -20,7 +20,15 @@ COPY --chmod=644 gradio/ /gradio
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 
 # Copy default configuration
-COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
+COPY --chmod=644 configurations/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
+
+# Install llama_cpp_python wheel + set CUDA/CUBLAS runtime paths ----
+RUN wget https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.1.0/llama_cpp_python-0.3.16-cp311-cp311-linux_x86_64.whl && \
+    pip3 install --no-cache-dir llama_cpp_python-0.3.16-cp311-cp311-linux_x86_64.whl && \
+    rm -f llama_cpp_python-0.3.16-cp311-cp311-linux_x86_64.whl && \
+    echo "/opt/conda/lib/python3.11/site-packages/nvidia/cuda_runtime/lib" > /etc/ld.so.conf.d/cuda-runtime.conf  && \
+    echo "/opt/conda/lib/python3.11/site-packages/nvidia/cublas/lib" > /etc/ld.so.conf.d/cublas.conf && \
+    ldconfig
 
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
@@ -36,6 +44,7 @@ RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/stavsap/comfyui-ollama.git && \
 	git clone https://github.com/bradsec/ComfyUI_StringEssentials.git && \
 	git clone https://github.com/heshengtao/comfyui_LLM_party.git && \
+	git clone https://github.com/Enemyx-net/VibeVoice-ComfyUI.git && \
 
 # Install requirements for each relevant custom node
 RUN pip3 install --no-cache-dir diffusers gradio requests openai \
